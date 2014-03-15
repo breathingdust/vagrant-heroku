@@ -46,7 +46,7 @@ $ vagrant box add heroku heroku.box
 Now all you have to do is setup vagrant in your project.
 
 ```bash
-$ vagrant init heroku
+~~$ vagrant init heroku~~ *(committed a pre-initialised Vagrantfile with port forwarding for postgresql)*
 $ vagrant up
 $ vagrant ssh
 ```
