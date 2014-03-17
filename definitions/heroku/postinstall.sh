@@ -81,6 +81,10 @@ su -c "/usr/bin/initdb -D /var/pgsql/data --locale=en_US.UTF-8 --encoding=UNICOD
 mkdir /var/pgsql/data/log
 chown postgres /var/pgsql/data/log
 
+# Allow remote access to postgres DB
+sed -i 's/127.0.0.1\/32/0.0.0.0\/0/g' /var/pgsql/data/pg_hba.conf
+sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/g" /var/pgsql/data/postgresql.conf
+
 # Start postgres
 su -c '/usr/bin/pg_ctl start -l /var/pgsql/data/log/logfile -D /var/pgsql/data' postgres
 
