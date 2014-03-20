@@ -106,6 +106,9 @@ rm -rf node*
 # Ruby, RubyGems, and Chef/Puppet are visible
 echo 'PATH=$PATH:/opt/ruby/bin' > /etc/profile.d/vagrantruby.sh
 
+# Install Rails 4
+/opt/ruby/bin/gem install rails --version 4.0.0
+
 # Installing vagrant keys
 mkdir /home/vagrant/.ssh
 chmod 700 /home/vagrant/.ssh
