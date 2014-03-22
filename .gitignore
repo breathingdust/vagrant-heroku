@@ -3,3 +3,6 @@
 Gemfile.lock
 /.bundle
 /bin
+/app/*
+!/app/.keep
+/.vagrant
